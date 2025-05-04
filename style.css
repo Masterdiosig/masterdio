@@ -33,9 +33,9 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 20px 5%;
   flex-wrap: wrap;
-  max-width: 100%;
+  width: 100%;
 }
 
 .logo {
@@ -49,7 +49,6 @@ html, body {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  max-width: 100%;
 }
 
 .nav-links a {
@@ -66,7 +65,7 @@ html, body {
   transform: translate(-50%, -50%);
   text-align: center;
   padding: 0 20px;
-  max-width: 100%;
+  max-width: 90%;
 }
 
 .hero-content h2 {
@@ -93,13 +92,12 @@ html, body {
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
+    align-items: center;
   }
 
   .nav-links {
     flex-direction: column;
-    width: 100%;
+    align-items: center;
     gap: 10px;
     margin-top: 10px;
   }
@@ -117,7 +115,5 @@ html, body {
     font-size: 16px;
   }
 }
-body {
-  overflow-x: hidden;
-}
+
 
