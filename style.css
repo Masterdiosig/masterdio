@@ -17,6 +17,8 @@ html, body {
   background-position: center;
   height: 100vh;
   position: relative;
+  overflow: hidden; /* Ngăn tràn khi zoom */
+  width: 100%; /* Đảm bảo phần tử này không vượt quá 100% */
 }
 
 .overlay {
@@ -33,9 +35,10 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 5%;
+  padding: 20px 40px;
   flex-wrap: wrap;
-  width: 100%;
+  max-width: 100%;
+  width: 100%; /* Đảm bảo không bị tràn khi zoom */
 }
 
 .logo {
@@ -49,6 +52,8 @@ html, body {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  max-width: 100%;
+  width: 100%; /* Đảm bảo không bị tràn khi zoom */
 }
 
 .nav-links a {
@@ -65,7 +70,9 @@ html, body {
   transform: translate(-50%, -50%);
   text-align: center;
   padding: 0 20px;
-  max-width: 90%;
+  max-width: 100%;
+  left: 0;
+  right: 0; /* Căn chỉnh phần tử này với bố cục */
 }
 
 .hero-content h2 {
@@ -92,12 +99,13 @@ html, body {
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    padding: 20px;
   }
 
   .nav-links {
     flex-direction: column;
-    align-items: center;
+    width: 100%;
     gap: 10px;
     margin-top: 10px;
   }
@@ -114,6 +122,10 @@ html, body {
     padding: 10px 20px;
     font-size: 16px;
   }
+}
+
+body {
+  overflow-x: hidden; /* Ngăn tràn toàn bộ trang */
 }
 
 
