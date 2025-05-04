@@ -8,19 +8,7 @@ html, body {
   font-family: Arial, sans-serif;
   height: 100%;
   width: 100%;
-  overflow-x: hidden; /* Ngăn tràn cuộn ngang */
-  position: relative;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* Ngăn tràn cuộn ngang */
-}
-
-.wrapper {
-  width: 100%;
-  overflow-x: hidden; /* Ngăn tràn cuộn ngang */
+  overflow-x: hidden;
 }
 
 .hero {
@@ -28,7 +16,6 @@ body {
   background-size: cover;
   background-position: center;
   height: 100vh;
-  width: 100%;
   position: relative;
 }
 
@@ -49,7 +36,6 @@ body {
   padding: 20px 40px;
   flex-wrap: wrap;
   max-width: 100%;
-  width: 100%;
 }
 
 .logo {
@@ -81,7 +67,6 @@ body {
   text-align: center;
   padding: 0 20px;
   max-width: 100%;
-  width: 100%;
 }
 
 .hero-content h2 {
@@ -121,10 +106,12 @@ body {
 
   .hero-content h2 {
     font-size: 28px;
+    margin-bottom: 15px;
   }
 
   .hero-content p {
     font-size: 16px;
+    margin-bottom: 20px;
   }
 
   .btn {
