@@ -4,10 +4,11 @@
   box-sizing: border-box;
 }
 
-body, html {
+html, body {
   font-family: Arial, sans-serif;
   height: 100%;
-  overflow-x: hidden; /* Ngăn tràn ngang */
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .hero {
@@ -24,6 +25,8 @@ body, html {
   width: 100%;
   position: absolute;
   color: white;
+  top: 0;
+  left: 0;
 }
 
 .navbar {
@@ -32,19 +35,21 @@ body, html {
   align-items: center;
   padding: 20px 40px;
   flex-wrap: wrap;
-  width: 100%; /* Thêm để tránh tràn */
+  max-width: 100%;
 }
 
 .logo {
   font-size: 28px;
   font-weight: bold;
+  color: white;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px;
   flex-wrap: wrap;
+  gap: 20px;
+  max-width: 100%;
 }
 
 .nav-links a {
@@ -61,6 +66,7 @@ body, html {
   transform: translate(-50%, -50%);
   text-align: center;
   padding: 0 20px;
+  max-width: 100%;
 }
 
 .hero-content h2 {
@@ -80,6 +86,7 @@ body, html {
   text-decoration: none;
   font-weight: bold;
   border-radius: 5px;
+  display: inline-block;
 }
 
 /* Responsive cho điện thoại */
