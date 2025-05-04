@@ -4,11 +4,10 @@
   box-sizing: border-box;
 }
 
-html, body {
+body, html {
   font-family: Arial, sans-serif;
   height: 100%;
-  overflow-x: hidden;
-  -webkit-text-size-adjust: 100%; /* ngăn zoom khi xoay ngang iOS */
+  overflow-x: hidden; /* Ngăn tràn ngang */
 }
 
 .hero {
@@ -31,25 +30,28 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 20px 40px;
   flex-wrap: wrap;
+  width: 100%; /* Thêm để tránh tràn */
 }
 
 .logo {
-  font-size: 1.75rem;
+  font-size: 28px;
   font-weight: bold;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1.25rem;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 .hero-content {
@@ -58,70 +60,54 @@ html, body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  padding: 0 1rem;
+  padding: 0 20px;
 }
 
 .hero-content h2 {
-  font-size: 6vw;
-  margin-bottom: 1.25rem;
+  font-size: 48px;
+  margin-bottom: 20px;
 }
 
 .hero-content p {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
+  font-size: 20px;
+  margin-bottom: 30px;
 }
 
 .btn {
-  padding: 0.75rem 1.5rem;
+  padding: 12px 24px;
   background-color: #ff6600;
   color: white;
   text-decoration: none;
   font-weight: bold;
   border-radius: 5px;
-  font-size: 1rem;
-  display: inline-block;
 }
 
-/* Responsive cho thiết bị nhỏ */
+/* Responsive cho điện thoại */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
-    padding: 1rem;
+    padding: 20px;
   }
 
   .nav-links {
     flex-direction: column;
     width: 100%;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
+    gap: 10px;
+    margin-top: 10px;
   }
 
   .hero-content h2 {
-    font-size: 2rem;
+    font-size: 28px;
   }
 
   .hero-content p {
-    font-size: 1rem;
+    font-size: 16px;
   }
 
   .btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-content h2 {
-    font-size: 1.5rem;
-  }
-
-  .hero-content p {
-    font-size: 0.95rem;
-  }
-
-  .btn {
-    font-size: 0.9rem;
+    padding: 10px 20px;
+    font-size: 16px;
   }
 }
 
