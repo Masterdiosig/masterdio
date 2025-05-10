@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "axios": "^1.9.0",
+    "cidr-matcher": "^2.1.1",
     "csv-parser": "^3.2.0",
     "express": "^5.1.0",
+    "ip-cidr": "^4.0.2",
     "ip-range-check": "^0.2.0",
     "next": "15.3.1",
     "node-cron": "^3.0.3",

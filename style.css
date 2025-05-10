@@ -1,130 +1,77 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
   font-family: Arial, sans-serif;
-  height: 100%;
-  width: 100%;
-  overflow-x: hidden;
 }
 
-.hero {
-  background-image: url('https://source.unsplash.com/1600x900/?music,studio');
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  position: relative;
-}
-
-.overlay {
-  background-color: rgba(0, 0, 0, 0.6);
-  height: 100%;
-  width: 100%;
-  position: absolute;
+body {
+  background-color: #555;
   color: white;
-  top: 0;
-  left: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  flex-wrap: wrap;
-  max-width: 100%;
+.logo-header {
+  padding: 20px 0;
 }
 
 .logo {
   font-size: 28px;
   font-weight: bold;
-  color: white;
 }
 
-.nav-links {
-  list-style: none;
+.hero {
+  flex-grow: 1;
+  padding: 40px 20px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  max-width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  white-space: nowrap;
+.hero h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  max-width: 90%;
 }
 
-.hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  padding: 0 20px;
-  max-width: 100%;
-}
-
-.hero-content h2 {
-  font-size: 48px;
+.hero p {
+  font-size: 16px;
   margin-bottom: 20px;
-}
-
-.hero-content p {
-  font-size: 20px;
-  margin-bottom: 30px;
+  max-width: 90%;
 }
 
 .btn {
+  background-color: orange;
+  color: white;
   padding: 12px 24px;
-  background-color: #ff6600;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.footer {
+  background-color: #444;
+  padding: 20px;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 10px;
+}
+
+.footer-row a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  display: inline-block;
+  font-size: 16px;
 }
 
-/* Responsive cho điện thoại */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-    margin-top: 10px;
-  }
-
-  .hero-content h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
-  }
-
-  .hero-content p {
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
-
-  .btn {
-    padding: 10px 20px;
-    font-size: 16px;
-  }
+.footer .note {
+  font-size: 12px;
+  opacity: 0.7;
 }
-
-body {
-  overflow-x: hidden;
-}
-
-
-
-
-

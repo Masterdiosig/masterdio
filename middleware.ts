@@ -1,37 +1,33 @@
-import { NextRequest, NextResponse } from 'next/server';
-import CIDR from 'ip-cidr';
-import fs from 'fs';
-import path from 'path';
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
+import { CIDRMatcher } from 'cidr-matcher';
+import { vietnamCIDRs } from './vietnamCIDRs';
 
-// Load danh sách CIDR nhà mạng VN
-const ispsPath = path.resolve('./vietnam_isps.json');
-const vietnamISPs = JSON.parse(fs.readFileSync(ispsPath, 'utf8'));
-
-// Hàm kiểm tra IP có nằm trong CIDR nào không
-function isVietnamISP(ip: string): boolean {
-  return vietnamISPs.some((isp: { cidr: string }) => {
-    const cidr = new CIDR(isp.cidr);
-    return cidr.contains(ip);
-  });
-}
+const matcher = new CIDRMatcher(vietnamCIDRs);
 
 export function middleware(request: NextRequest) {
-  const ip = request.headers.get('x-real-ip') || request.ip || '';
+  const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || '';
 
-  if (ip && isVietnamISP(ip)) {
+  if (matcher.contains(ip)) {
     return new NextResponse(
       `
-        <div style="max-width: 600px; margin: 100px auto; padding: 30px; border: 3px solid red; border-radius: 10px; color: red; font-family: sans-serif; text-align: center; background-color: #fff5f5;">
-          <img src="https://flagcdn.com/w320/vn.png" alt="Vietnam Flag" style="width: 100px; margin-bottom: 20px;" />
-          <h1>Website này không khả dụng cho nhà mạng Việt Nam.</h1>
+        <div style="text-align:center;padding:50px;color:red">
+          <h1>Website này không khả dụng tại Việt Nam.</h1>
         </div>
       `,
       {
         status: 403,
-        headers: { 'Content-Type': 'text/html' }
+        headers: { 'Content-Type': 'text/html' },
       }
     );
   }
 
   return NextResponse.next();
 }
+
+// ⚠️ QUAN TRỌNG: chặn mọi route, kể cả API và assets
+export const config = {
+  matcher: [
+    '/((?!_next/static|_next/image|favicon.ico).*)',
+  ],
+};
