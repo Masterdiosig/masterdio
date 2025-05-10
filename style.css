@@ -142,3 +142,32 @@ footer {
     gap: 10px;
   }
 }
+/* Các phần khác giữ nguyên như bản trước */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form .btn {
+  width: max-content;
+  margin: auto;
+  cursor: pointer;
+}
