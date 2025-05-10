@@ -1,77 +1,82 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
-
 body {
-  background-color: #555;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url('background.jpg') no-repeat center center/cover;
   color: white;
+}
+
+.header {
   display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  text-align: center;
-}
-
-.logo-header {
-  padding: 20px 0;
-}
-
-.logo {
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.hero {
-  flex-grow: 1;
-  padding: 40px 20px;
-  display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-}
-
-.hero h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  max-width: 90%;
-}
-
-.hero p {
-  font-size: 16px;
-  margin-bottom: 20px;
-  max-width: 90%;
-}
-
-.btn {
-  background-color: orange;
-  color: white;
-  padding: 12px 24px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-.footer {
-  background-color: #444;
   padding: 20px;
 }
 
-.footer-row {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-bottom: 10px;
+.logo {
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.footer-row a {
+.logo span {
+  color: #FF7300;
+}
+
+.btn-signup {
+  background-color: #FF7300;
   color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 36px;
+  line-height: 1.4;
+}
+
+.hero h2 {
+  font-size: 42px;
+  font-weight: bold;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.btn-join {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #FF4C00;
+  color: white;
+  padding: 14px 30px;
+  border-radius: 8px;
   text-decoration: none;
+  font-weight: bold;
   font-size: 16px;
 }
 
-.footer .note {
-  font-size: 12px;
-  opacity: 0.7;
+.platforms {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.platforms img {
+  width: 80px;
+  filter: brightness(0) invert(1);
 }
