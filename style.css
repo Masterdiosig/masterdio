@@ -13,12 +13,15 @@ body {
 }
 
 .logo {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
-.logo span {
+.logo .bar {
   color: #FF7300;
+  margin: 0 5px;
+  display: inline-block;
 }
 
 .btn-signup {
@@ -34,6 +37,7 @@ body {
 .menu-icon {
   font-size: 24px;
   cursor: pointer;
+  display: none;
 }
 
 .hero {
@@ -44,6 +48,7 @@ body {
 .hero h1 {
   font-size: 36px;
   line-height: 1.4;
+  font-weight: 700;
 }
 
 .hero h2 {
