@@ -25,6 +25,11 @@
       text-align: center;
     }
 
+    .login-container img {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+
     .login-container h2 {
       margin-bottom: 20px;
       font-weight: 600;
@@ -81,15 +86,32 @@
 </head>
 <body>
   <div class="login-container">
+    <!-- 🔰 MasterDio Logo -->
+    <img src="/images/masterdio-logo.png" alt="MasterDio Logo" />
+    
     <h2>Welcome Back ♡</h2>
-    <form action="/login" method="POST">
-      <input type="text" name="username" placeholder="Username" required />
+
+    <!-- ✅ Login Form -->
+    <form id="loginForm" action="/login" method="POST">
+      <input type="text" name="email" placeholder="Gmail address" required />
       <input type="password" name="password" placeholder="Password" required />
       <button type="submit" class="login-btn">Login</button>
     </form>
+
     <div class="small-text">
       Not a member? <a href="/register.html">Register</a>
     </div>
   </div>
+
+  <!-- ✅ Check email is Gmail -->
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      const email = this.email.value;
+      if (!email.endsWith('@gmail.com')) {
+        e.preventDefault();
+        alert('Chỉ chấp nhận đăng nhập bằng Gmail (email phải kết thúc bằng @gmail.com)');
+      }
+    });
+  </script>
 </body>
 </html>
