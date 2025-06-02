@@ -3,6 +3,31 @@
 <html lang="en">
 <head><title>Admin Approvals</title></head>
 <body>
+<h2>Danh sách tài khoản chờ duyệt</h2>
+<ul id="user-list"></ul>
+
+<script>
+fetch('/admin/pending-users')
+  .then(res => res.json())
+  .then(users => {
+    const ul = document.getElementById('user-list');
+    users.forEach(user => {
+      const li = document.createElement('li');
+      li.innerHTML = `
+        ${user.username} - ${user.email}
+        <button onclick="approve('${user._id}')">Duyệt</button>
+      `;
+      ul.appendChild(li);
+    });
+  });
+
+function approve(id) {
+  fetch(`/admin/approve/${id}`, { method: 'POST' })
+    .then(() => location.reload());
+}
+</script>
+
+
   <h2>Danh sách tài khoản chờ duyệt</h2>
   <ul id="user-list"></ul>
 
