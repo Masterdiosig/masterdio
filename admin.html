@@ -1,0 +1,31 @@
+<!-- admin.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Admin Approvals</title></head>
+<body>
+  <h2>Danh sách tài khoản chờ duyệt</h2>
+  <ul id="user-list"></ul>
+
+  <script>
+    fetch('/api/pending-users')
+      .then(res => res.json())
+      .then(users => {
+        const list = document.getElementById('user-list');
+        users.forEach(user => {
+          const li = document.createElement('li');
+          li.textContent = user.email;
+          const approveBtn = document.createElement('button');
+          approveBtn.textContent = "Duyệt";
+          approveBtn.onclick = () => {
+            fetch('/api/approve-user/' + user._id, { method: 'POST' })
+              .then(() => {
+                li.remove(); // xoá khỏi danh sách
+              });
+          };
+          li.appendChild(approveBtn);
+          list.appendChild(li);
+        });
+      });
+  </script>
+</body>
+</html>

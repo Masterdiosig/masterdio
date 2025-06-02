@@ -1,0 +1,14 @@
+// userSchema.js
+const mongoose = require('mongoose');
+
+const userSchema = new mongoose.Schema({
+  username: String,
+  email: String,
+  password: String,
+  isApproved: {
+    type: Boolean,
+    default: false, // Mặc định chưa được admin duyệt
+  },
+});
+
+module.exports = mongoose.model('User', userSchema);
