@@ -3,7 +3,7 @@
 <html lang="en">
 <head><title>Admin Approvals</title></head>
 <body>
-<h2>Danh sách tài khoản chờ duyệt</h2>
+<h2>List of accounts awaiting approval</h2>
 <ul id="user-list"></ul>
 
 <script>
@@ -28,7 +28,7 @@ function approve(id) {
 </script>
 
 
-  <h2>Danh sách tài khoản chờ duyệt</h2>
+  <h2>List of accounts awaiting approval</h2>
   <ul id="user-list"></ul>
 
   <script>
@@ -40,11 +40,11 @@ function approve(id) {
           const li = document.createElement('li');
           li.textContent = user.email;
           const approveBtn = document.createElement('button');
-          approveBtn.textContent = "Duyệt";
+          approveBtn.textContent = "approval";
           approveBtn.onclick = () => {
             fetch('/api/approve-user/' + user._id, { method: 'POST' })
               .then(() => {
-                li.remove(); // xoá khỏi danh sách
+                li.remove();
               });
           };
           li.appendChild(approveBtn);
